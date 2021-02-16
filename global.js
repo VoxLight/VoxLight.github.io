@@ -1,3 +1,4 @@
+console.log("Loaded global.js")
 function HTMLImporter() {}
 
 HTMLImporter.import = function(url) {
