@@ -1,8 +1,10 @@
 
 
 function update_progress_bar(amount){
-    let bar = document.getElementById('progress-bar');
+    let bar = document.getElementById('progressbar');
     bar.setAttribute("style", "height: " + amount.toString() + ";");
+    bar.setAttribute("arial-valuenow", amount);
+
     return false;
 };
 
@@ -27,7 +29,7 @@ function main(){
     };
 
     setInterval(function(){
-        let bar = document.getElementById('progress-bar');
+        let bar = document.getElementById('progressbar');
         let amount = bar.getAttribute("aria-valuenow");
         update_progress_bar(amount+3);
     }, 3000);
