@@ -30,8 +30,8 @@ function main(){
     setInterval(function(){
         let bar = document.getElementById('progressbar');
         let amount = parseInt(bar.getAttribute("aria-valuenow"));
-        update_progress_bar(amount+3);
-    }, 3000);
+        update_progress_bar(amount+0.2);
+    }, 10);
 
 
 
