@@ -10,7 +10,7 @@ const EX_TR = `
     <td>0</td>
     <td>0</td>
     <td>0</td>
-    td>0</td>
+    <td>0</td>
     <td>0</td>
     <td>0</td>
 </tr>`
