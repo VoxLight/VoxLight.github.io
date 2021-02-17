@@ -37,7 +37,7 @@ function main(){
 
     console.log("Loaded script.js");
 
-    ex_tr = document.getElementById(ROW_NAME).cloneNode(true);
+    ex_tr = document.getElementById(ROW_NAME).content.cloneNode(true);
 
     document.getElementById(STATS_FORM_NAME).onsubmit = function() {
         populate_monster_table();
