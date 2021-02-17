@@ -3,6 +3,8 @@ const MONSTER_TABLE_NAME = "monstertable";
 const MONSTER_TABLE_BODY = "monstertablebody";
 const STATS_FORM_NAME = "calc";
 
+//please chnage
+//comment this neesd to change
 var ex_tr = document.getElementById(ROW_NAME).content.cloneNode(true);
 var monster = ["Wolf", 5, 0, 0, 0, 0, 0, 0, 0]
 
