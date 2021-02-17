@@ -47,6 +47,7 @@ function main(){
 
     document.getElementById(STATS_FORM_NAME).onsubmit = function() {
         show("working");
+        show(MONSTER_TABLE_NAME);
         populate_monster_table();
         // console.log(document.getElementById('fights').value);
         // console.log(document.getElementById('stat2').value);
