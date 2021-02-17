@@ -1,7 +1,7 @@
 
 
 function update_progress_bar(amount){
-    $('.progress-bar').css('width', amount+'%').attr('aria-valuenow', valeur);
+    $('.progress-bar').css('width', amount+'%').attr('aria-valuenow', amount);
     // let bar = document.getElementById('progressbar');
     // bar.setAttribute("style", "width: " + amount.toString() + ";");
     // bar.setAttribute("aria-valuenow", amount);
