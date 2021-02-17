@@ -10,7 +10,7 @@ function insert_monster(row){
     let tbody = document.getElementById(MONSTER_TABLE_BODY);
     tbody.appendChild(row);
     return false
-}
+};
 
 function populate_monster_table(monster, rtwmp){
     setInterval(function(){
