@@ -15,7 +15,7 @@ function main(){
 
     console.log("Loaded script.js");
 
-    document.getElementById('calculator-input').onsubmit = function() { 
+    document.getElementById('calc').onsubmit = function() { 
         console.log(document.getElementById('fights').value);
         console.log(document.getElementById('stat2').value);
         console.log(document.getElementById('stat3').value);
@@ -23,9 +23,7 @@ function main(){
         console.log(document.getElementById('stat5').value);
     
         return false;
-    
-    
-    
+
     };
 
     setInterval(function(){
