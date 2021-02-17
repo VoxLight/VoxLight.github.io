@@ -1,8 +1,8 @@
 html {
     background-color: #191727
- }
- 
- #background {
+}
+
+#background {
     position: fixed;
     top: 0;
     left: 0;
@@ -15,40 +15,40 @@ html {
     -o-background-size: cover;
     background-size: cover;
     z-index: -1
- }
- 
- body {
+}
+
+body {
     background-color: transparent;
     margin-top: 2rem;
     margin-bottom: 2rem
- }
- 
- .footer img,
- .header img {
+}
+
+.footer img,
+.header img {
     max-height: 60px
- }
- 
- .footer img.logo,
- .header img.logo {
+}
+
+.footer img.logo,
+.header img.logo {
     max-height: 160px;
     max-width: 85%
- }
- 
- .shadow-lg {
+}
+
+.shadow-lg {
     box-shadow: 0 1rem 3rem rgba(0, 0, 0, .75)!important
- }
- 
- .card label,
- .card.bg-dark {
+}
+
+.card label,
+.card.bg-dark {
     color: #eee
- }
- 
- .card.bg-transparent {
+}
+
+.card.bg-transparent {
     color: transparent
- }
- 
- .custom-select,
- .form-control {
+}
+
+.custom-select,
+.form-control {
     display: inline-block;
     width: 100%;
     height: calc(2.0625rem + 2px);
@@ -64,31 +64,36 @@ html {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none
- }
- 
- .page-item.disabled .page-link,
- .page-link {
+}
+
+.page-item.disabled .page-link,
+.page-link {
     color: #9d9488;
     background-color: #22252a;
     border-color: rgb(56 61 63)
- }
- 
- a,
- a:active,
- a:enabled,
- a:focus {
+}
+
+a,
+a:active,
+a:enabled,
+a:focus {
     color: #aaa
- }
- 
- a:hover {
+}
+
+a:hover {
     color: #ccc
- }
- 
- 
- 
- .card-header-tabs {
+}
+
+
+
+.card-header-tabs {
     margin: 0;
     background-color: transparent;
     padding: 0;
     border-bottom: 1px solid #22252a!important
- }
+}
+
+th,
+td {
+    color: #eee;
+}
