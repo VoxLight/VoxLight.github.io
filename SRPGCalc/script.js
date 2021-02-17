@@ -1,5 +1,5 @@
-function create_monster_row(monster){
-    let row = ex_tr.cloneNode(true);
+function create_monster_row(monster, rtwmp){
+    let row = rtwmp.cloneNode(true);
     for(let i =0; i<monster.length; i++){
         row.children[0].cells[i].innerHTML = monster[i];
     }
@@ -12,9 +12,9 @@ function insert_monster(row){
     return false
 }
 
-function populate_monster_table(monster){
+function populate_monster_table(monster, rtwmp){
     setInterval(function(){
-        insert_monster(create_monster_row(monster));
+        insert_monster(create_monster_row(monster, rtwmp));
     }, 1000)
 
     return false;
@@ -43,7 +43,7 @@ function main(){
 
 
     document.getElementById(STATS_FORM_NAME).onsubmit = function() {
-        populate_monster_table();
+        populate_monster_table(monster, ex_tr);
         // console.log(document.getElementById('fights').value);
         // console.log(document.getElementById('stat2').value);
         // console.log(document.getElementById('stat3').value);
