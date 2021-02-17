@@ -2,7 +2,7 @@
 
 function update_progress_bar(amount){
     let bar = document.getElementById('progressbar');
-    bar.setAttribute("style", "height: " + amount.toString() + ";");
+    bar.setAttribute("style", "width: " + amount.toString() + ";");
     bar.setAttribute("arial-valuenow", amount);
 
     return false;
