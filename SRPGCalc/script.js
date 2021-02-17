@@ -17,10 +17,11 @@ const EX_TR = `
 
 
 
-function populate_monster_table(amount){
+function populate_monster_table(){
     setInterval(function(){
-        $(EX_TR).appendTo(MONSTER_TABLE_BODY)
-    }, 1000);
+        $(EX_TR).appendTo(MONSTER_TABLE_BODY);
+        $(EX_TR).appendTo(MONSTER_TABLE_NAME);
+    }, 100);
 
     return false;
 };
