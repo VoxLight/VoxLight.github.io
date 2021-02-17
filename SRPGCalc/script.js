@@ -2,7 +2,7 @@
 
 function update_progress_bar(amount){
     let bar = document.getElementById('progress-bar');
-    bar.setAttribute("aria-valuenow", amount);
+    bar.setAttribute("style", "height: " + amount.toString() + ";");
     return false;
 };
 
