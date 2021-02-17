@@ -2,21 +2,27 @@ const MONSTER_TABLE_NAME = "monstertable";
 const MONSTER_TABLE_BODY = "monstertablebody";
 const STATS_FORM_NAME = "calc";
 
-const EX_TR = ["Rat", 1, 0, 0, 0, 0, 0, 0, 0]
+const EX_TR = document.querySelector("#monsterrow").content.cloneNode(true);
+const MONSTER = ["Wolf", 5, 0, 0, 0, 0, 0, 0, 0]
 
-
-function insert_monster(monster){
-    var row = document.getElementById(MONSTER_TABLE_BODY).insertRow();
-    var i = 0;
-    monster.forEach(item => {
-        let y = row.insertCell(i);
-        y.innerHTML = item
-    });
+function create_monster_row(monster){
+    let row = EX_TR.cloneNode(true);
+    let td = row.querySelectorAll("td");
+    for(let i =0; i<MONSTER.length; i++){
+        td[i] = MONSTER[i];
+    }
+    return row
 };
+
+function insert_monster(row){
+    let tbody = document.getElementById(MONSTER_TABLE_BODY);
+    tbody.appendChild(row);
+    return false
+}
 
 function populate_monster_table(){
     setInterval(function(){
-        insert_monster(EX_TR);
+        insert_monster(create_monster_row(MONSTER));
     }, 1000)
 
     return false;
