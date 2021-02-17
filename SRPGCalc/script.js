@@ -9,8 +9,10 @@ var ex_tr = null;
 var monster = ["Wolf", 5, 0, 0, 0, 0, 0, 0, 0]
 
 function show(ID){
-    $(ID).removeClass('d-none')
-}
+    let a = document.getElementById(ID);
+    a.classList.remove("d-none");
+    return false;
+};
 
 function create_monster_row(monster, ){
     let row = ex_tr.cloneNode(true);
@@ -44,7 +46,7 @@ function main(){
     ex_tr = document.getElementById(ROW_NAME).content.cloneNode(true);
 
     document.getElementById(STATS_FORM_NAME).onsubmit = function() {
-        show("working")
+        show("working");
         populate_monster_table();
         // console.log(document.getElementById('fights').value);
         // console.log(document.getElementById('stat2').value);
