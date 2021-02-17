@@ -2,26 +2,22 @@ const MONSTER_TABLE_NAME = "monstertable";
 const MONSTER_TABLE_BODY = "monstertablebody";
 const STATS_FORM_NAME = "calc";
 
-const EX_TR = `
-<tr>
-    <th scope="row">Rat</th>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td>0</td>
-    <td>0</td>
-    <td>0</td>
-    <td>0</td>
-    <td>0</td>
-</tr>`
+const EX_TR = ["Rat", 1, 0, 0, 0, 0, 0, 0, 0]
 
 
+function insert_monster(monster){
+    var row = document.getElementById(MONSTER_TABLE_BODY).insertRow();
+    var i = 0;
+    monster.forEach(item => {
+        let y = row.insertCell(i);
+        y.innerHTML = item
+    });
+};
 
 function populate_monster_table(){
     setInterval(function(){
-        $(EX_TR).appendTo(MONSTER_TABLE_BODY);
-        $(EX_TR).appendTo(MONSTER_TABLE_NAME);
-    }, 100);
+        insert_monster(EX_TR);
+    }, 1000)
 
     return false;
 };
