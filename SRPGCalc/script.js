@@ -1,8 +1,9 @@
+const ROW_NAME = "monsterrow";
 const MONSTER_TABLE_NAME = "monstertable";
 const MONSTER_TABLE_BODY = "monstertablebody";
 const STATS_FORM_NAME = "calc";
 
-const EX_TR = document.querySelector("#monsterrow").content.cloneNode(true);
+const EX_TR = document.getElementById(ROW_NAME).content.cloneNode(true);
 const MONSTER = ["Wolf", 5, 0, 0, 0, 0, 0, 0, 0]
 
 function create_monster_row(monster){
