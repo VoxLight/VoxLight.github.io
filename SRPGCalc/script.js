@@ -5,7 +5,7 @@ const STATS_FORM_NAME = "calc";
 
 //please chnage
 //comment this neesd to change
-var ex_tr = document.getElementById(ROW_NAME).content.cloneNode(true);
+var ex_tr = document.getElementById(ROW_NAME).cloneNode(true);
 var monster = ["Wolf", 5, 0, 0, 0, 0, 0, 0, 0]
 
 function create_monster_row(monster){
