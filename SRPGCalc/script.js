@@ -1,13 +1,3 @@
-const ROW_NAME = "monsterrow";
-const MONSTER_TABLE_NAME = "monstertable";
-const MONSTER_TABLE_BODY = "monstertablebody";
-const STATS_FORM_NAME = "calc";
-
-//please chnage
-//comment this neesd to change
-var ex_tr = document.getElementById(ROW_NAME).cloneNode(true);
-var monster = ["Wolf", 5, 0, 0, 0, 0, 0, 0, 0]
-
 function create_monster_row(monster){
     let row = ex_tr.cloneNode(true);
     for(let i =0; i<monster.length; i++){
@@ -22,7 +12,7 @@ function insert_monster(row){
     return false
 }
 
-function populate_monster_table(){
+function populate_monster_table(monster){
     setInterval(function(){
         insert_monster(create_monster_row(monster));
     }, 1000)
@@ -31,11 +21,26 @@ function populate_monster_table(){
 };
 
 
-
-
 function main(){
 
     console.log("Loaded script.js");
+
+
+    const ROW_NAME = "monsterrow";
+    const MONSTER_TABLE_NAME = "monstertable";
+    const MONSTER_TABLE_BODY = "monstertablebody";
+    const STATS_FORM_NAME = "calc";
+
+    var ex_tr = document.getElementById(ROW_NAME).cloneNode(true);
+    var monster = ["Wolf", 5, 0, 0, 0, 0, 0, 0, 0]
+
+    
+
+
+
+
+
+
 
     document.getElementById(STATS_FORM_NAME).onsubmit = function() {
         populate_monster_table();
