@@ -35,12 +35,13 @@ function main(){
 
     console.log("Loaded script.js");
 
-    document.getElementById(STATS_FORM_NAME).onsubmit = function() { 
-        console.log(document.getElementById('fights').value);
-        console.log(document.getElementById('stat2').value);
-        console.log(document.getElementById('stat3').value);
-        console.log(document.getElementById('stat4').value);
-        console.log(document.getElementById('stat5').value);
+    document.getElementById(STATS_FORM_NAME).onsubmit = function() {
+        populate_monster_table();
+        // console.log(document.getElementById('fights').value);
+        // console.log(document.getElementById('stat2').value);
+        // console.log(document.getElementById('stat3').value);
+        // console.log(document.getElementById('stat4').value);
+        // console.log(document.getElementById('stat5').value);
     
         return false;
 
