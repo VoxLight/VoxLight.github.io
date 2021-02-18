@@ -45,9 +45,6 @@ function main(){
     console.log("Loaded script.js");
 
     // setup datatable
-    $(document).ready( function () {
-        
-    } );
 
     ex_tr = document.getElementById(ROW_NAME).content.cloneNode(true);
 
