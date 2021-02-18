@@ -46,12 +46,13 @@ function main(){
 
     // setup datatable
     $(document).ready( function () {
-        $('#myTable').DataTable();
+        
     } );
 
     ex_tr = document.getElementById(ROW_NAME).content.cloneNode(true);
 
     document.getElementById(STATS_FORM_NAME).onsubmit = function() {
+        $("#"+MONSTER_TABLE_NAME).DataTable();
         show("working");
         show(TABLE_CARD_NAME);
         populate_monster_table();
