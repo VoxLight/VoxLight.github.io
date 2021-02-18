@@ -32,15 +32,26 @@ function insert_monster(){
         randomInt(10, 50),
         randomInt(10, 50)
     ]).draw(false);
-    res();
 
 };
+function yieldingLoop(count, chunksize, callback, finished) {
+    var i = 0;
+    (function chunk() {
+        var end = Math.min(i + chunksize, count);
+        for ( ; i < end; ++i) {
+            callback.call(null, i);
+        }
+        if (i < count) {
+            setTimeout(chunk, 0);
+        } else {
+            finished.call(null);
+        }
+    })();
+}
 
-const calculateFights = new Promise( (res, rej) => {
-    for(let i=0; i<num; i++){
-        insert_monster()
-    };
-});
+function getFights(){
+    return parseInt(document.getElementById('fights').value);
+}
 
 function parse(num){
     return $.isNumeric(num) && (num >= 0);
@@ -60,11 +71,7 @@ function main(){
     
 
     document.getElementById(STATS_FORM_NAME).onsubmit = function() {
-        show("working");
-        show(TABLE_CARD_NAME);
-        
-
-        let fights = parseInt(document.getElementById('fights').value);
+        let fights = getFights();
         let stat1 = parseInt(document.getElementById('stat1').value);
         let stat2 = parseInt(document.getElementById('stat2').value);
         let stat3 = parseInt(document.getElementById('stat3').value);
@@ -76,14 +83,19 @@ function main(){
         nums.forEach(num => {
             if (!parse(num)){
                 bad = true;
-                return;
+                return false;
             };
         });
 
         if (bad){
             alert("You fill in all fields with non-negative numbers to calculate the fights.");
+            return false;
         }else{
-            calculate_fights(fights);
+            show("working");
+            show(TABLE_CARD_NAME);
+            yieldingLoop(fights, 1, function(i) {
+                insert_monster();
+            }, ()=>{});
         };
         
     
