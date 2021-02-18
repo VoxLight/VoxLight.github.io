@@ -75,13 +75,14 @@ function main(){
         let bad = false;
         nums.forEach(num => {
             if (!parse(num)){
-                alert("You fill in all fields with non-zero numbers to calculate the fights.");
                 bad = true;
                 return;
             };
         });
 
-        if (!bad){
+        if (bad){
+            alert("You fill in all fields with non-zero numbers to calculate the fights.");
+        }else{
             calculate_fights(fights);
         };
         
