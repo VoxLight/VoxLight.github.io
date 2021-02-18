@@ -3,6 +3,7 @@ const TABLE_CARD_NAME = "tablecard";
 const MONSTER_TABLE_NAME = "monstertable";
 const MONSTER_TABLE_BODY = "monstertablebody";
 const STATS_FORM_NAME = "calc";
+var t = $("#"+MONSTER_TABLE_NAME).DataTable();
 
 //please chnage
 //comment this neesd to change
@@ -15,24 +16,14 @@ function show(ID){
     return false;
 };
 
-function create_monster_row(monster, ){
-    let row = ex_tr.cloneNode(true);
-    for(let i =0; i<monster.length; i++){
-        row.children[0].cells[i].innerHTML = monster[i];
-    }
-    return row
-};
-
-function insert_monster(row){
-    let tbody = document.getElementById(MONSTER_TABLE_BODY);
-    tbody.appendChild(row);
-    return false
+function insert_monster(){
+    t.row.add(monster).draw(false);
 }
 
 function populate_monster_table(){
     setInterval(function(){
-        insert_monster(create_monster_row(monster));
-    }, 1000)
+        insert_monster();
+    }, 1000);
 
     return false;
 };
@@ -48,8 +39,10 @@ function main(){
 
     ex_tr = document.getElementById(ROW_NAME).content.cloneNode(true);
 
+    
+
     document.getElementById(STATS_FORM_NAME).onsubmit = function() {
-        $("#"+MONSTER_TABLE_NAME).DataTable();
+
         show("working");
         show(TABLE_CARD_NAME);
         populate_monster_table();
