@@ -5,10 +5,11 @@ const MONSTER_TABLE_BODY = "monstertablebody";
 const STATS_FORM_NAME = "calc";
 var t = $("#"+MONSTER_TABLE_NAME).DataTable();
 
-//please chnage
-//comment this neesd to change
-var ex_tr = null;
-var monster = ["Wolf", 5, 0, 0, 0, 0, 0, 0, 0]
+
+
+function randomInt(range1, range2){
+    return Math.random() * (max - min) + min;     // returns a random integer from 0 to 9
+}
 
 function show(ID){
     let a = document.getElementById(ID);
@@ -17,7 +18,15 @@ function show(ID){
 };
 
 function insert_monster(){
-    t.row.add(monster).draw(false);
+    t.row.add([
+        "Wolf",
+        5,
+        randomInt(10, 50),
+        randomInt(10, 50),
+        randomInt(10, 50),
+        randomInt(10, 50),
+        randomInt(10, 50)
+    ]).draw(false);
 }
 
 function populate_monster_table(){
@@ -36,8 +45,6 @@ function main(){
     console.log("Loaded script.js");
 
     // setup datatable
-
-    ex_tr = document.getElementById(ROW_NAME).content.cloneNode(true);
 
     
 
