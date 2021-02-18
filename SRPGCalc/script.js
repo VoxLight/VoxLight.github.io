@@ -25,6 +25,8 @@ function insert_monster(){
         randomInt(10, 50),
         randomInt(10, 50),
         randomInt(10, 50),
+        randomInt(10, 50),
+        randomInt(10, 50),
         randomInt(10, 50)
     ]).draw(false);
 }
