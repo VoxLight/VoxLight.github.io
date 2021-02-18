@@ -3,7 +3,7 @@ const TABLE_CARD_NAME = "tablecard";
 const MONSTER_TABLE_NAME = "monstertable";
 const MONSTER_TABLE_BODY = "monstertablebody";
 const STATS_FORM_NAME = "calc";
-var t = $("#"+MONSTER_TABLE_NAME).DataTable();
+var t = null;
 
 
 
@@ -45,7 +45,7 @@ function main(){
     console.log("Loaded script.js");
 
     // setup datatable
-
+    t = $("#"+MONSTER_TABLE_NAME).DataTable()
     
 
     document.getElementById(STATS_FORM_NAME).onsubmit = function() {
