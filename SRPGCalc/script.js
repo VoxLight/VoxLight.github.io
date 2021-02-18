@@ -7,7 +7,7 @@ var t = null;
 
 
 
-function randomInt(range1, range2){
+function randomInt(min, max){
     return Math.random() * (max - min) + min;     // returns a random integer from 0 to 9
 }
 
