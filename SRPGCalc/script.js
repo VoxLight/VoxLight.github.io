@@ -34,7 +34,7 @@ function insert_monster(){
     ]).draw(false);
 }
 
-function calculate_fights(num){
+function calculate_fights(num=0){
     for(let i=0; i<num; i++){
         insert_monster()
     };
@@ -43,7 +43,7 @@ function calculate_fights(num){
 };
 
 function parse(num){
-    return $.isNumeric(num) && (num > 0);
+    return $.isNumeric(num) && (num >= 0);
 }
 
 
@@ -81,7 +81,7 @@ function main(){
         });
 
         if (bad){
-            alert("You fill in all fields with non-zero numbers to calculate the fights.");
+            alert("You fill in all fields with non-negative numbers to calculate the fights.");
         }else{
             calculate_fights(fights);
         };
