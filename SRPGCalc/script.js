@@ -44,6 +44,11 @@ function main(){
 
     console.log("Loaded script.js");
 
+    // setup datatable
+    $(document).ready( function () {
+        $('#myTable').DataTable();
+    } );
+
     ex_tr = document.getElementById(ROW_NAME).content.cloneNode(true);
 
     document.getElementById(STATS_FORM_NAME).onsubmit = function() {
