@@ -1,4 +1,5 @@
 const ROW_NAME = "monsterrow";
+const TABLE_CARD_NAME = "tablecard";
 const MONSTER_TABLE_NAME = "monstertable";
 const MONSTER_TABLE_BODY = "monstertablebody";
 const STATS_FORM_NAME = "calc";
@@ -47,7 +48,7 @@ function main(){
 
     document.getElementById(STATS_FORM_NAME).onsubmit = function() {
         show("working");
-        show(MONSTER_TABLE_NAME);
+        show(TABLE_CARD_NAME);
         populate_monster_table();
         // console.log(document.getElementById('fights').value);
         // console.log(document.getElementById('stat2').value);
