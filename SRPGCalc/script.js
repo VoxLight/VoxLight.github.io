@@ -1,8 +1,11 @@
+// IDS to remember
 const ROW_NAME = "monsterrow";
 const TABLE_CARD_NAME = "tablecard";
 const MONSTER_TABLE_NAME = "monstertable";
 const MONSTER_TABLE_BODY = "monstertablebody";
 const STATS_FORM_NAME = "calc";
+
+
 var t = null;
 
 
@@ -31,13 +34,17 @@ function insert_monster(){
     ]).draw(false);
 }
 
-function populate_monster_table(){
-    setInterval(function(){
-        insert_monster();
-    }, 1000);
+function calculate_fights(num){
+    for(let i=0; i<num; i++){
+        insert_monster()
+    };
 
     return false;
 };
+
+function parse(num){
+    return $.isNumeric(num) && (num > 0);
+}
 
 
 
@@ -53,15 +60,31 @@ function main(){
     
 
     document.getElementById(STATS_FORM_NAME).onsubmit = function() {
-
         show("working");
         show(TABLE_CARD_NAME);
-        populate_monster_table();
-        // console.log(document.getElementById('fights').value);
-        // console.log(document.getElementById('stat2').value);
-        // console.log(document.getElementById('stat3').value);
-        // console.log(document.getElementById('stat4').value);
-        // console.log(document.getElementById('stat5').value);
+        
+
+        let fights = parseInt(document.getElementById('fights').value);
+        let stat1 = parseInt(document.getElementById('stat1').value);
+        let stat2 = parseInt(document.getElementById('stat2').value);
+        let stat3 = parseInt(document.getElementById('stat3').value);
+        let stat4 = parseInt(document.getElementById('stat4').value);
+        let nums = [fights, stat1, stat2, stat3, stat4]
+
+        // bad data
+        let bad = false;
+        nums.forEach(num => {
+            if (!parse(num)){
+                alert("You fill in all fields with non-zero numbers to calculate the fights.");
+                bad = true;
+                return;
+            };
+        });
+
+        if (!bad){
+            calculate_fights(fights);
+        };
+        
     
         return false;
 
