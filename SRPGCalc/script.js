@@ -47,7 +47,9 @@ function main(){
     console.log("Loaded script.js");
 
     // setup datatable
-    t = $("#"+MONSTER_TABLE_NAME).DataTable()
+    t = $("#"+MONSTER_TABLE_NAME).DataTable({
+        "scrollX": true
+    });
     
 
     document.getElementById(STATS_FORM_NAME).onsubmit = function() {
