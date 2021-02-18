@@ -32,15 +32,15 @@ function insert_monster(){
         randomInt(10, 50),
         randomInt(10, 50)
     ]).draw(false);
-}
+    res();
 
-function calculate_fights(num=0){
+};
+
+const calculateFights = new Promise( (res, rej) => {
     for(let i=0; i<num; i++){
         insert_monster()
     };
-
-    return false;
-};
+});
 
 function parse(num){
     return $.isNumeric(num) && (num >= 0);
