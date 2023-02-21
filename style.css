@@ -16,6 +16,14 @@ body {
 
 }
 
+.terminal > .window input[type="text"]{
+    background-color: #010000;
+    color: #219463;
+    border: none;
+    outline: none;
+
+}
+
 .terminal > .frame {
     width: auto !important;
     height: auto !important;
@@ -42,3 +50,8 @@ body {
     -webkit-user-drag: none;
 }
 
+.terminal-input {
+    position: absolute;
+    left: -10000px;
+  }
+  
