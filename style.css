@@ -1,0 +1,44 @@
+body {
+    background-color: #222222;
+    font-family: monospace;
+    height: 100vh;
+    margin: 0;
+}
+
+.terminal > .window {
+    width: auto !important;;
+    height: inherit !important;
+
+    overflow: hidden;
+
+    background-color: #010000;
+    color: #219463;
+
+}
+
+.terminal > .frame {
+    width: auto !important;
+    height: auto !important;
+    
+    border-radius: 0;
+    border-top: 30px solid #2c2c2c;
+    
+
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+  
+.terminal {   
+
+    width: 75vh;
+    height: 50vh;
+
+
+    margin: 0 auto;
+
+}
+
+#terminal {
+    -webkit-user-drag: none;
+}
+
